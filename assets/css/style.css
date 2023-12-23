@@ -14,7 +14,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 22px;
     font-weight: 400;
     color: #000000;
@@ -47,7 +47,7 @@ li {
 
 .sub-title {
     font-weight: 700;
-    font-size: 19px;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -82,12 +82,14 @@ li {
     width: 28px;
     height: 32px;
     background: url('../images/icons-sprites.png') -160px -10px;
+    flex-shrink: 0;
 }
 
 .icon-email {
     width: 28px;
     height: 22px;
     background: url('../images/icons-sprites.png') -160px -62px;
+    flex-shrink: 0;
 }
 
 .icon-phone {
@@ -104,8 +106,13 @@ li {
     top: 0;
     width: 100%;
     z-index: 99;
-    padding-top: 0;
+}
+
+.isSticky,
+.main-header:has(.navbar-collapse.collapsing),
+.main-header:has(.navbar-collapse.show) {
     background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
 }
 
 .topbar-contact-text {
@@ -383,7 +390,6 @@ li {
 
 .social-links {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -411,11 +417,9 @@ li {
 
 @media screen and (min-width:992px) {
     .main-header {
-        background: transparent;
         padding-top: 32px;
     }
     .isSticky {
-        background: #fff;
         padding-top: 0;
     }
     .main-header .navbar-nav .nav-item .nav-link {
